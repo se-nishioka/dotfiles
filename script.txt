@@ -1,0 +1,17 @@
+
+#ln -s ~/.vimrc ~/.vimrc
+
+mkdir -p ~/.vim/dein/repos/github.com/Shougo/
+git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
+cd ~/.vim/dein/repos/github.com/Shougo/dein.vim/bin
+sh ./installer.sh ~/.cache/dein
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/kenichi-nishioka/dotfiles.git
+git push -u origin master
+
+
+cd ~
+git clone  https://github.com/kenichi-nishioka/dotfiles.git

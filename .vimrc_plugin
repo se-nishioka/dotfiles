@@ -1,0 +1,30 @@
+" *******************************************************
+" dein
+" *******************************************************
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state(expand('~/.cache/dein'))
+    call dein#begin(expand('~/.cache/dein'))
+
+    call dein#add('Shougo/dein.vim')
+    call dein#add('Shougo/neocomplete.vim') " vimの補完機能
+    call dein#add('Shougo/neosnippet.vim') " vimのsnippet機能。:NeoSnippetEditで編集可能。
+    call dein#add('Shougo/neosnippet-snippets') " 基本的なsnippetのセット
+    call dein#add('scrooloose/nerdtree') " ディレクトリをツリー表示できる
+    call dein#add('vim-syntastic/syntastic') " 構文チェック。linterは適宜追加。
+    call dein#add('tpope/vim-fugitive.git') " vim内でgitを扱えるようにする
+    call dein#add('tpope/vim-surround') " 「テキストを囲うもの」の編集を行う
+    call dein#add('vim-scripts/YankRing.vim') " テキストコピーの履歴を順々に参照できる。<C-p>, <C-n>で循環。
+    call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'}) " pythonの高機能な補完機能。
+
+    call dein#end()
+    call dein#save_state()
+endif
+filetype plugin indent on
+syntax enable
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
